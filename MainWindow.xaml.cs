@@ -15,7 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+// Ronda Rutherford
+// Lecture 01-25-23 - Class (Methods)
+// 02-03-23
 namespace Lecture_01_25_23_Class_Methods
 {
     /// <summary>
@@ -24,13 +26,41 @@ namespace Lecture_01_25_23_Class_Methods
     public partial class MainWindow : Window
     {
         List<Student> students = new List<Student>();
+        Course csi122;
         public MainWindow()
         {
             InitializeComponent();
-
+            csi122 = new Course("CSI 122", "Will Cram");
         }
 
         private void btnAddStudent_Click(object sender, RoutedEventArgs e)
+        {
+
+            AddStudentToList();
+            csi122.EnrollStudent(students[students.Count - 1]);
+
+            runDisplay.Text = "";
+            runDisplay.Text = csi122.CourseName + " " + csi122.Teacher + "\n";
+            MessageBox.Show(csi122.RosterAverage().ToString());
+
+            foreach (Student student in csi122.CourseRoster)
+            {
+                runDisplay.Text += student + "\n";
+            }
+
+            //DisplayStudents();
+
+            //You use the * ____ operator * do you use to access members inside of an instanced class?
+            //      The dot operator
+
+            //// How do I display my student from my list?
+            ////runDisplay.Text = s.FirstName + " " + s.LastName + " " + s.CsiGrade + " " + s.GenEdGrade;
+            //runDisplay.Text = s.ToString();
+
+
+        } // btnAddStudent_Click
+
+        public void AddStudentToList()
         {
             string firstName = txtFirstName.Text;
             string lastName = txtLastName.Text;
@@ -45,35 +75,22 @@ namespace Lecture_01_25_23_Class_Methods
             // Add student to my list of students -- we can add the student directly in the list because the list place acts as a variable name
             students.Add(new Student(firstName, lastName, csiGrade, genEdGrade));
 
-            Student s = students[0];
-
-
-            // How do I display my student from my list?
-            runDisplay.Text = s.FirstName + " " + s.LastName + " " + s.CsiGrade + " " + s.GenEdGrade;
-
-
-
-        } // btnAddStudent_Click
+            //Student s = students[0];
+        } // AddStudent
+        public void DisplayStudents()
+        {
+            // clears our display
+            runDisplay.Text = "";
+            // shows all of our students
+            for (int i = 0; i < students.Count; i++)
+            {
+                runDisplay.Text += students[i] + "\n";
+            }
+        } // DisplayStudents
     }
 
 
 
-    //    Notes
-    // What is a method?
-    // A method is a block of code that is given a name and runs when it is called.
-    // What is the purpose of a method?
-    // A method can be used to compartmentalize our code into a small portion so that we can reuse it. A method can make your code easy to call, easy to read, easy to refactor, and easy to reuse.
-    //What is a class method?
-
-    //Review: What are the 4 parts of declaring a method?
-    //    What keyword allows you to access members related to the specific instance?
-    //A method build inside a class has access to what, even it’s access modifier is set to private?
-    //    What does “override .ToString()” allow us to do?
-    //You use the * ____ operator * do you use to access members inside of an instanced class?
-
-
-    //Optional: 
-
-    //What is method overloading?
-    //What needs to be different to overload a method?
+    
+    
 }
