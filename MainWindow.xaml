@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <RichTextBox Margin="400,48,49,131">
+        <RichTextBox Margin="400,32,49,71">
             <FlowDocument>
                 <Paragraph>
                     <Run x:Name="runDisplay" Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Canvas Margin="28,22,462,106" Background="#FF94C89B">
+        <Canvas Margin="28,32,462,96" Background="#FF94C89B">
             <Label Content="First Name" Canvas.Left="10" Canvas.Top="10"/>
             <Label Content="Last Name" Canvas.Left="10" Canvas.Top="74" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Label Content="CSI" Canvas.Left="10" Canvas.Top="153" HorizontalAlignment="Center" VerticalAlignment="Top"/>
@@ -24,7 +24,7 @@
             <TextBox x:Name="txtCSIGrade" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" Canvas.Left="10" Canvas.Top="184" VerticalAlignment="Top"/>
             <TextBox x:Name="txtGenEdGrade" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" Canvas.Left="155" Canvas.Top="184" VerticalAlignment="Top"/>
         </Canvas>
-        <Button x:Name="btnAddStudent" Content="Add Student" HorizontalAlignment="Left" Margin="115,261,0,0" VerticalAlignment="Top" Height="29" Width="136"/>
+        <Button x:Name="btnAddStudent" Content="Add Student" HorizontalAlignment="Left" Margin="115,261,0,0" VerticalAlignment="Top" Height="29" Width="136" Click="btnAddStudent_Click"/>
 
 
     </Grid>

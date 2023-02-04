@@ -17,11 +17,16 @@ namespace Lecture_01_25_23_Class_Methods
         double _csiGrade;
         double _genEdGrade;
 
+
+
         // Constructor
         //public Student(string firstName)
         //{
         //    this._firstName = firstName;
         //}
+
+        //Review: What’s the name for any field, constructor, property or method that is part of a class?
+        //        Member
 
         // created with quick action - 
         public Student(string firstName, string lastName, double csiGrade, double genEdGrade)

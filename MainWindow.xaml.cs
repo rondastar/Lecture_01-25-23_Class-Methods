@@ -23,11 +23,37 @@ namespace Lecture_01_25_23_Class_Methods
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Student> students = new List<Student>();
         public MainWindow()
         {
             InitializeComponent();
 
         }
+
+        private void btnAddStudent_Click(object sender, RoutedEventArgs e)
+        {
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            double csiGrade = double.Parse(txtCSIGrade.Text);
+            double genEdGrade = double.Parse(txtGenEdGrade.Text);
+
+            //Student student = new Student(firstName, lastName, csiGrade, genEdGrade);
+
+            //// Add student to my list of students
+            //students.Add(student);
+
+            // Add student to my list of students -- we can add the student directly in the list because the list place acts as a variable name
+            students.Add(new Student(firstName, lastName, csiGrade, genEdGrade));
+
+            Student s = students[0];
+
+
+            // How do I display my student from my list?
+            runDisplay.Text = s.FirstName + " " + s.LastName + " " + s.CsiGrade + " " + s.GenEdGrade;
+
+
+
+        } // btnAddStudent_Click
     }
 
 
@@ -38,7 +64,7 @@ namespace Lecture_01_25_23_Class_Methods
     // What is the purpose of a method?
     // A method can be used to compartmentalize our code into a small portion so that we can reuse it. A method can make your code easy to call, easy to read, easy to refactor, and easy to reuse.
     //What is a class method?
-    //Review: What’s the name for any field, constructor, property or method that is part of a class?
+
     //Review: What are the 4 parts of declaring a method?
     //    What keyword allows you to access members related to the specific instance?
     //A method build inside a class has access to what, even it’s access modifier is set to private?

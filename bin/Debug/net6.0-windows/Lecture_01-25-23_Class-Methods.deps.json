@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Lecture_01-25-23_Class-Methods/1.0.0": {
+        "runtime": {
+          "Lecture_01-25-23_Class-Methods.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lecture_01-25-23_Class-Methods/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
